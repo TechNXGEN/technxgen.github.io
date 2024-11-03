@@ -34,7 +34,7 @@ jobs:
           node-version: '20'
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: gohugoio/hugo-setup@v1
         with:
           hugo-version: 'latest'
           extended: true
@@ -57,9 +57,11 @@ jobs:
           hugo --minify --baseURL="https://nxgen.tech/"
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
+          name: github-pages
           path: ./public
+          retention-days: 1
 
   deploy:
     environment:
@@ -69,5 +71,6 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
