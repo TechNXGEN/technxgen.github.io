@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/technxgen.github.io" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/docsy" vcs="Git" />
   </component>
 </project>
