@@ -1,0 +1,4 @@
+theme = "docsy"
+baseURL = 'https://nxgen.tech/'
+languageCode = 'en-us'
+title = 'NXGEN - Unreal Engine Development Blog'
